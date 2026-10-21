@@ -1,0 +1,114 @@
+.brand-hand-section {
+  --brand-hand-bg: #000;
+  --brand-hand-ink: #f6f9fc;
+  --brand-hand-muted: #a7afb9;
+  --brand-hand-green: #4dbf6d;
+  isolation: isolate;
+  background: var(--brand-hand-bg);
+  min-height: clamp(650px, 85svh, 900px);
+  color: var(--brand-hand-ink);
+  position: relative;
+  overflow: hidden;
+}
+@supports (color: lab(0% 0 0)) {
+  .brand-hand-section {
+    --brand-hand-bg: lab(0% 0 0);
+    --brand-hand-ink: lab(97.6703% -0.411928 -1.83777);
+    --brand-hand-muted: lab(70.9595% -1.38149 -6.56105);
+    --brand-hand-green: #4ac06c;
+  }
+}
+.brand-hand-inner {
+  width: min(100%, 1600px);
+  min-height: inherit;
+  align-items: center;
+  margin: 0 auto;
+  padding: 90px clamp(28px, 7vw, 112px);
+  display: flex;
+  position: relative;
+}
+.brand-hand-copy {
+  z-index: 2;
+  width: min(54%, 760px);
+  position: relative;
+}
+.brand-hand-copy h2 {
+  white-space: nowrap;
+  margin: 0;
+  font-size: clamp(40px, 4.6vw, 72px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+.brand-hand-copy h2 span {
+  -webkit-text-fill-color: transparent;
+  color: #89d29f;
+  background: linear-gradient(#fff 26%, #d6f1e8 62%, #89d29f);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.brand-hand-copy p {
+  max-width: 460px;
+  color: var(--brand-hand-muted);
+  margin: 30px 0 0;
+  font-size: clamp(16px, 1.23vw, 20px);
+  line-height: 1.55;
+}
+.brand-hand-art {
+  z-index: 1;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transform-origin: 80% 75%;
+  width: min(54%, 860px);
+  height: auto;
+  position: absolute;
+  bottom: max(-8%, -62px);
+  right: -12%;
+}
+@media (max-width: 900px) {
+  .brand-hand-section {
+    min-height: 680px;
+  }
+  .brand-hand-copy {
+    width: 55%;
+  }
+  .brand-hand-art {
+    width: 62%;
+    bottom: -6%;
+    right: -14%;
+  }
+}
+@media (max-width: 640px) {
+  .brand-hand-section {
+    min-height: 0;
+  }
+  .brand-hand-inner {
+    flex-direction: column;
+    align-items: center;
+    padding: 72px 6% 0;
+  }
+  .brand-hand-copy {
+    text-align: center;
+    width: 100%;
+  }
+  .brand-hand-copy h2 {
+    white-space: normal;
+    font-size: clamp(24px, 7.4vw, 34px);
+  }
+  .brand-hand-copy p {
+    text-wrap: balance;
+    max-width: none;
+    margin: 16px auto 0;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .brand-hand-art {
+    transform-origin: 50% 75%;
+    width: 124%;
+    max-width: none;
+    margin: -30px -22% 0 auto;
+    position: relative;
+    bottom: auto;
+    right: auto;
+  }
+}

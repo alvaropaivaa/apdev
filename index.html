@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Os valores %SITE_*% vêm de src/config/site.ts (ver vite.config.ts). -->
+    <title>%SITE_TITLE%</title>
+    <meta name="description" content="%SITE_DESCRIPTION%" />
+    <meta name="theme-color" content="#020604" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="%SITE_URL%/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="%SITE_NAME%" />
+    <meta property="og:title" content="%SITE_TITLE%" />
+    <meta property="og:description" content="%SITE_DESCRIPTION%" />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="%SITE_TITLE%" />
+    <meta name="twitter:description" content="%SITE_DESCRIPTION%" />
+
+    <!-- Nome novo de arquivo (icon-32) para os navegadores não reaproveitarem o ícone antigo do cache. -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/ProductSansInfanity.ttf" as="font" type="font/ttf" crossorigin />
+    <!-- Só na visão de celular (no computador a foto é carregada dentro da coluna de celular). -->
+    <link
+      rel="preload"
+      href="/images/hero-foto.webp"
+      as="image"
+      type="image/webp"
+      media="(hover: none), (pointer: coarse), (max-width: 699px)"
+    />
+    <link rel="preload" href="/images/logo-floating.webp" as="image" type="image/webp" />
+
+    <!-- Fundo escuro até o banner aparecer (evita flash branco ao abrir). -->
+    <style>
+      html { background: #000; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Ative o JavaScript para ver este site.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

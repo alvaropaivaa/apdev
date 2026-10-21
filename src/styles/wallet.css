@@ -1,0 +1,325 @@
+.wallet-section {
+  --wallet-ink: #eff6fb;
+  --wallet-soft-ink: #d3e5ead9;
+  --wallet-rule: #63a16342;
+  --wallet-light: #b9e5b1;
+  --wallet-pill: #91bb8c2e;
+  isolation: isolate;
+  z-index: 2;
+  height: 100svh;
+  min-height: 680px;
+  color: var(--wallet-ink);
+  background-color: #000204;
+  background-position: 50%;
+  background-size: cover;
+  border-radius: 22px 22px 0 0;
+  position: relative;
+  overflow: visible;
+}
+@supports (color: lab(0% 0 0)) {
+  .wallet-section {
+    --wallet-ink: lab(96.5356% -1.63302 -3.29707);
+    --wallet-soft-ink: #d3e5ead9;
+    --wallet-rule: #64a16342;
+    --wallet-light: #b2e9ac;
+    --wallet-pill: #91bb8c2e;
+  }
+}
+.wallet-section:after {
+  content: "";
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    #00020400,
+    #00020438 28%,
+    #00010285 52%,
+    #000c 74%,
+    #000000f0 88%,
+    #000 97%
+  );
+  background: linear-gradient(
+    #00020400,
+    #00020438 28%,
+    #00010285 52%,
+    #000c 74%,
+    #000000f0 88%,
+    #000 97%
+  );
+  height: clamp(140px, 22vh, 300px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.wallet-headline {
+  z-index: 3;
+  text-align: center;
+  text-transform: uppercase;
+  text-wrap: balance;
+  width: 42%;
+  margin: 0;
+  padding: clamp(20px, 2.2vw, 42px) clamp(24px, 2.6vw, 52px);
+  font-size: clamp(32px, 2.85vw, 53px);
+  font-weight: 400;
+  line-height: 1.05;
+  position: absolute;
+  top: 16.5%;
+  left: 50%;
+  transform: translate(-50%);
+}
+@media (min-width: 1800px) {
+  .wallet-headline {
+    top: 19.5%;
+  }
+}
+.wallet-line {
+  filter: drop-shadow(0 10px 28px #00a55759);
+  display: block;
+  position: relative;
+}
+.wallet-word {
+  opacity: 1;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+  background: linear-gradient(#fff 26%, #d6f1e8 62%, #89d29f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline;
+}
+.wallet-art-position {
+  z-index: 2;
+  pointer-events: none;
+  width: min(39.5%, 590px);
+  position: absolute;
+  bottom: calc(-14px - min(5.71vw, 85.3px));
+  left: 50%;
+  transform: translate(-50%);
+}
+/* Carteira e nota em camadas: a nota fica atrás e sai de dentro da carteira. */
+.wallet-stack {
+  transform-origin: 50% 100%;
+  position: relative;
+}
+.wallet-art {
+  z-index: 2;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+}
+/* Só mostra a nota acima da borda da carteira (o resto está "dentro" dela). */
+.wallet-bill-clip {
+  z-index: 1;
+  pointer-events: none;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 34.833%,
+    79.583% 34.833%,
+    79.583% 32.667%,
+    75.833% 32.583%,
+    69.167% 33.833%,
+    65% 34.333%,
+    56.667% 35.667%,
+    48.333% 36.75%,
+    40% 37.75%,
+    31% 39.25%,
+    25% 40.333%,
+    0% 39.833%
+  );
+  position: absolute;
+  inset: 0;
+}
+.wallet-bill-slide {
+  width: 60.5%;
+  height: 41.667%;
+  position: absolute;
+  top: 4%;
+  left: 27.167%;
+}
+.wallet-bill-render {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.wallet-bill {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* Canvas do WebGL: maior que a nota (folga de 48px da textura 726x500 em cada lado). */
+.wallet-bill-canvas {
+  pointer-events: none;
+  visibility: hidden;
+  width: 113.223%;
+  height: 119.2%;
+  position: absolute;
+  top: -9.6%;
+  left: -6.612%;
+}
+.wallet-bill-render.is-webgl .wallet-bill {
+  visibility: hidden;
+}
+.wallet-bill-render.is-webgl .wallet-bill-canvas {
+  visibility: visible;
+}
+.wallet-left-copy {
+  z-index: 3;
+  max-width: 24%;
+  position: absolute;
+  top: 73%;
+  left: 5.8%;
+}
+.wallet-left-copy p,
+.wallet-right-copy p {
+  margin: 0;
+}
+.wallet-left-copy p {
+  font-size: clamp(16px, 1.32vw, 25px);
+  line-height: 1.38;
+}
+.wallet-right-copy {
+  z-index: 3;
+  width: 15.5%;
+  color: var(--wallet-soft-ink);
+  font-size: clamp(13px, 1.03vw, 20px);
+  line-height: 1.43;
+  position: absolute;
+  top: 49%;
+  right: 5.5%;
+}
+.wallet-cta {
+  color: #0a0f1e;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  background: #fff;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+  margin-top: 18px;
+  padding: 0 26px;
+  font-size: clamp(12px, 0.95vw, 16px);
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 0.3s cubic-bezier(0.22, 0.61, 0.36, 1),
+    background 0.3s;
+  display: inline-flex;
+  box-shadow: 0 10px 30px #00000059;
+}
+.wallet-cta:hover {
+  background: #f4f6fb;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 38px #00000073;
+}
+.wallet-cta-chip {
+  color: #fff;
+  background: #48aa60;
+  border-radius: 50%;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-left: 6px;
+  display: grid;
+}
+.wallet-cta-chip svg {
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.wallet-cta:hover .wallet-cta-chip svg {
+  transform: rotate(-135deg);
+}
+@media (max-width: 900px) {
+  .wallet-art-position {
+    width: 50%;
+    bottom: calc(-14px - 7.23vw);
+  }
+  .wallet-headline {
+    width: 55%;
+    top: 14.5%;
+  }
+  .wallet-left-copy {
+    max-width: 26%;
+  }
+  .wallet-right-copy {
+    width: 19%;
+  }
+}
+@media (max-width: 640px) {
+  .wallet-section {
+    background-position: bottom;
+    border-radius: 18px 18px 0 0;
+    height: 100svh;
+    min-height: 740px;
+    overflow: clip;
+  }
+  .wallet-headline {
+    width: 92%;
+    font-size: clamp(27px, 6.8vw, 40px);
+    line-height: 1.1;
+    top: 7%;
+  }
+  .wallet-art-position {
+    width: min(92%, 360px);
+    top: 23%;
+    bottom: auto;
+  }
+  .wallet-left-copy {
+    text-align: center;
+    max-width: none;
+    top: 73%;
+    left: 6%;
+    right: 6%;
+  }
+  .wallet-left-copy p {
+    text-wrap: balance;
+    font-size: 15px;
+    line-height: 1.35;
+  }
+  .wallet-right-copy {
+    text-align: center;
+    width: auto;
+    font-size: 13px;
+    line-height: 1.4;
+    top: 79.5%;
+    left: 10%;
+    right: 10%;
+  }
+  .wallet-right-copy p {
+    display: none;
+  }
+  .wallet-cta {
+    height: 46px;
+    margin-top: 0;
+    padding: 0 10px 0 20px;
+    font-size: 12px;
+  }
+  .wallet-cta-chip {
+    margin-left: 8px;
+  }
+}
+@media (max-width: 360px) {
+  .wallet-headline {
+    font-size: 22px;
+    top: 5%;
+  }
+  .wallet-left-copy {
+    top: 73%;
+    left: 6%;
+    right: 6%;
+  }
+  .wallet-right-copy {
+    top: 79.5%;
+    left: 6%;
+    right: 6%;
+  }
+  .wallet-cta {
+    padding-left: 16px;
+    font-size: 11px;
+  }
+}

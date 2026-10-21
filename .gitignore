@@ -1,0 +1,7 @@
+node_modules
+dist
+*.local
+.DS_Store
+
+# Arquivos originais do site de referência (não publicar)
+originais-azul/

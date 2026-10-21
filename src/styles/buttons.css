@@ -1,0 +1,118 @@
+.cta-btn {
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  border-radius: 999px;
+  align-items: center;
+  gap: 12px;
+  height: 46px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+}
+.cta-primary {
+  color: #002917;
+  background: #fff;
+  padding: 0 5px 0 22px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-fill {
+  z-index: 0;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  transform: translate(103%);
+}
+.cta-fill--green {
+  background: var(--cta-green, #48aa60);
+}
+.cta-fill--white {
+  background: #fff;
+}
+@keyframes cta-rise {
+  0% {
+    transform: translate(103%);
+  }
+  62% {
+    transform: translate(-2.4%);
+  }
+  82% {
+    transform: translate(1.1%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+.cta-primary.is-filling .cta-fill--green {
+  animation: 1.05s cubic-bezier(0.3, 0.6, 0.3, 1) forwards cta-rise;
+}
+.cta-primary.is-filled .cta-fill--green {
+  transform: translate(0);
+}
+.cta-primary.is-returning .cta-fill--white {
+  animation: 0.9s cubic-bezier(0.3, 0.6, 0.3, 1) forwards cta-rise;
+}
+.cta-chip {
+  z-index: 1;
+  background: var(--cta-green, #48aa60);
+  color: #fff;
+  border-radius: 50%;
+  flex: none;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  display: grid;
+  position: relative;
+}
+.cta-chip svg {
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.cta-primary:hover .cta-chip svg {
+  transform: rotate(-135deg);
+}
+.cta-primary.is-filled .cta-chip svg {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.cta-label {
+  z-index: 1;
+  white-space: nowrap;
+  transition: color 0.35s;
+  position: relative;
+}
+.cta-primary.is-filled .cta-label {
+  color: #fff;
+}
+.cta-secondary {
+  color: var(--hero-ink);
+  background: 0 0;
+  border: 1px solid #fff6;
+  padding: 0 26px;
+  transition:
+    background 0.35s,
+    border-color 0.35s;
+}
+.cta-secondary:hover {
+  background: #ffffff1f;
+  border-color: #ffffffbf;
+}
+@media (max-width: 640px) {
+  .cta-btn {
+    border-radius: 999px;
+    gap: 10px;
+    height: 47px;
+    font-size: 12px;
+  }
+  .cta-primary {
+    padding: 0 5px 0 18px;
+  }
+  .cta-chip {
+    width: 36px;
+    height: 36px;
+  }
+  .cta-secondary {
+    padding: 0 22px;
+  }
+}

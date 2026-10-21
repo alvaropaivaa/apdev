@@ -1,0 +1,113 @@
+.faq-section {
+  z-index: 2;
+  background: #000;
+  border-radius: 0 0 22px 22px;
+  justify-content: center;
+  padding: clamp(80px, 9vw, 150px) clamp(20px, 4vw, 60px);
+  display: flex;
+  position: relative;
+}
+.faq-card {
+  text-align: center;
+  width: min(100%, 880px);
+}
+.faq-title {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(#fff 26%, #d6f1e8 62%, #89d29f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin: 0;
+  font-size: clamp(34px, 4.2vw, 58px);
+  font-weight: 500;
+  line-height: 1.08;
+}
+.faq-list {
+  text-align: left;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: clamp(36px, 4vw, 56px);
+  display: flex;
+}
+.faq-row {
+  background: #1a1a1c
+    url("/images/faq-card-bg.png")
+    50% / cover no-repeat;
+  border-radius: 18px;
+  transition: filter 0.35s;
+}
+.faq-row.is-open {
+  filter: brightness(1.25);
+}
+.faq-row h3 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+.faq-question {
+  cursor: pointer;
+  text-align: left;
+  background: 0 0;
+  border: 0;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 20px 24px;
+  font-family: inherit;
+  display: flex;
+}
+.faq-q-text {
+  color: #fff;
+  flex: 1;
+  font-size: clamp(15px, 1.15vw, 17px);
+}
+.faq-toggle {
+  color: #fff;
+  flex: none;
+  place-items: center;
+  transition: transform 0.45s;
+  display: grid;
+}
+.faq-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+.faq-toggle-v {
+  transform-origin: 50%;
+  transition: opacity 0.3s;
+}
+.faq-row.is-open .faq-toggle {
+  transform: rotate(180deg);
+}
+.faq-row.is-open .faq-toggle-v {
+  opacity: 0;
+}
+.faq-answer {
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s;
+  display: grid;
+}
+.faq-row.is-open .faq-answer {
+  grid-template-rows: 1fr;
+}
+.faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+.faq-answer-inner p {
+  color: #fff9;
+  margin: 0;
+  padding: 0 60px 22px 24px;
+  font-size: clamp(14px, 1vw, 15px);
+  line-height: 1.6;
+}
+@media (max-width: 640px) {
+  .faq-question {
+    gap: 12px;
+    padding: 16px 18px;
+  }
+  .faq-q-text {
+    font-size: 14px;
+  }
+  .faq-answer-inner p {
+    padding: 0 18px 18px;
+  }
+}

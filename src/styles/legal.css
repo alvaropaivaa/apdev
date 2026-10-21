@@ -1,0 +1,122 @@
+.legal-overlay {
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background: #000000b3;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(16px, 4vw, 48px);
+  animation: 0.25s legalFade;
+  display: flex;
+  position: fixed;
+  inset: 0;
+}
+@keyframes legalFade {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.legal-modal {
+  background: #fff;
+  border-radius: 22px;
+  flex-direction: column;
+  width: min(760px, 100%);
+  max-height: 100%;
+  animation: 0.3s legalRise;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 30px 80px #00000073;
+}
+@keyframes legalRise {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.legal-modal-head {
+  border-bottom: 1px solid #00000014;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: clamp(22px, 4vw, 34px) clamp(22px, 4vw, 38px) 18px;
+  display: flex;
+}
+.legal-modal-head h2 {
+  color: #000;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+}
+.legal-modal-head span {
+  color: #00000073;
+  font-size: 0.8rem;
+}
+.legal-modal-close {
+  color: #000;
+  cursor: pointer;
+  background: 0 0;
+  border: 1px solid #0000001f;
+  border-radius: 999px;
+  flex-shrink: 0;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+  display: grid;
+}
+.legal-modal-close:hover {
+  color: #fff;
+  background: #48aa60;
+  border-color: #48aa60;
+}
+.legal-modal-body {
+  padding: clamp(20px, 4vw, 32px) clamp(22px, 4vw, 38px) clamp(28px, 4vw, 40px);
+  overflow-y: auto;
+}
+.legal-modal-intro {
+  color: #000000b3;
+  margin: 0 0 22px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.legal-modal-section {
+  margin-bottom: 22px;
+}
+.legal-modal-section:last-child {
+  margin-bottom: 0;
+}
+.legal-modal-section h3 {
+  color: #000;
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.legal-modal-section p {
+  color: #000000a6;
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.legal-modal-section ul {
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+}
+.legal-modal-section li {
+  color: #000000a6;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}

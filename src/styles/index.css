@@ -1,0 +1,19 @@
+/* Ordem importa: regras de seções podem sobrescrever os botões compartilhados. */
+@import "./base.css";
+@import "./buttons.css";
+@import "./hero.css";
+@import "./value.css";
+@import "./wallet.css";
+@import "./stats.css";
+@import "./clouds.css";
+@import "./projects.css";
+@import "./process.css";
+@import "./why.css";
+@import "./why3d.css";
+@import "./gateways.css";
+@import "./brand-hand.css";
+@import "./faq.css";
+@import "./footer.css";
+@import "./legal.css";
+@import "./floating-bar.css";
+@import "./effects.css";

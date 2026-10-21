@@ -1,0 +1,54 @@
+.floating-bar {
+  opacity: 0;
+  z-index: 9999;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  pointer-events: none;
+  background-color: #0000004d;
+  border: 1px solid #ffffff30;
+  border-radius: 14px;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 12px 12px 22px;
+  transition: all 0.5s;
+  display: flex;
+  position: fixed;
+  bottom: -120px;
+  right: 30px;
+}
+.floating-bar--ativo {
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.7s;
+  bottom: 30px;
+}
+.floating-bar--claro {
+  background-color: #0000008c;
+  border-color: #ffffff45;
+}
+.floating-bar-logo {
+  opacity: 0.95;
+  flex-shrink: 0;
+  width: auto;
+  height: 34px;
+  display: block;
+}
+@media (max-width: 760px) {
+  .floating-bar {
+    border-radius: 12px;
+    gap: 10px;
+    padding: 5px 5px 5px 12px;
+    bottom: -90px;
+    right: 14px;
+  }
+  .floating-bar--ativo {
+    bottom: 18px;
+    right: 14px;
+  }
+  .floating-bar-logo {
+    height: 24px;
+  }
+  .floating-bar .cta-btn {
+    height: 44px;
+  }
+}

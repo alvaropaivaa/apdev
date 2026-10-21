@@ -1,0 +1,269 @@
+.fraaame-section {
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+.fraaame-section:before {
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(#000, #000000b8 45%, #0000);
+  height: 34%;
+  position: absolute;
+  inset: 0 0 auto;
+}
+.fraaame-section:after {
+  content: "";
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(#fff0, #ffffffb8 55%, #fff);
+  height: 34%;
+  position: absolute;
+  inset: auto 0 0;
+}
+.fraaame-cloud-wrap {
+  z-index: 0;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.fraaame-cloud-layer {
+  will-change: transform;
+  backface-visibility: hidden;
+  position: absolute;
+  inset: 0;
+  transform: translateZ(0);
+}
+.fraaame-cloud {
+  object-fit: fill;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  width: min(680px, 62vw);
+  height: min(280px, 26vw);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.fraaame-cloud--center {
+  width: min(760px, 65vw);
+  height: min(320px, 27vw);
+  top: 51%;
+}
+.fraaame-cloud--left {
+  width: min(470px, 36vw);
+  height: min(200px, 15vw);
+  top: 54%;
+  left: 5%;
+}
+.fraaame-cloud--right {
+  width: min(500px, 39vw);
+  height: min(210px, 16vw);
+  top: 50%;
+  left: 93%;
+}
+.fc-m1 {
+  width: 30vw;
+  height: 12vw;
+  top: 63%;
+  left: 25%;
+}
+.fc-m2 {
+  width: 34vw;
+  height: 14vw;
+  top: 66%;
+  left: 76%;
+}
+.fc-m3 {
+  width: 29vw;
+  height: 12vw;
+  top: 70%;
+  left: -7%;
+}
+.fc-m4 {
+  width: 32vw;
+  height: 13vw;
+  top: 68%;
+  left: 108%;
+}
+.fraaame-layer--back {
+  opacity: 0.62;
+}
+.fc-b1 {
+  width: 18vw;
+  height: 7vw;
+  top: 27%;
+  left: 18%;
+}
+.fc-b2 {
+  width: 21vw;
+  height: 8vw;
+  top: 35%;
+  left: 49%;
+}
+.fc-b3 {
+  width: 17vw;
+  height: 6.5vw;
+  top: 25%;
+  left: 79%;
+}
+.fc-b4 {
+  width: 19vw;
+  height: 7vw;
+  top: 38%;
+  left: -3%;
+}
+.fc-b5 {
+  width: 20vw;
+  height: 7.5vw;
+  top: 37%;
+  left: 101%;
+}
+.fc-b6 {
+  opacity: 0.72;
+  width: 13vw;
+  height: 5vw;
+  top: 43%;
+  left: 65%;
+}
+.fraaame-layer--front {
+  z-index: 2;
+}
+.fc-f1 {
+  width: 42vw;
+  height: 17vw;
+  top: 88%;
+  left: -2%;
+}
+.fc-f2 {
+  width: 48vw;
+  height: 20vw;
+  top: 94%;
+  left: 32%;
+}
+.fc-f3 {
+  width: 45vw;
+  height: 18vw;
+  top: 89%;
+  left: 68%;
+}
+.fc-f4 {
+  width: 44vw;
+  height: 18vw;
+  top: 95%;
+  left: 103%;
+}
+@media (max-width: 760px) {
+  .fraaame-section {
+    background-position: 50%;
+    background-size: cover;
+    min-height: 46svh;
+  }
+  .fraaame-cloud--center {
+    width: 92vw;
+    height: 39vw;
+    top: 48%;
+    left: 51%;
+  }
+  .fraaame-cloud--left {
+    width: 62vw;
+    height: 26vw;
+    top: 59%;
+    left: -15%;
+  }
+  .fraaame-cloud--right {
+    width: 65vw;
+    height: 27vw;
+    top: 57%;
+    left: 112%;
+  }
+  .fc-m1 {
+    width: 57vw;
+    height: 24vw;
+    top: 68%;
+    left: 20%;
+  }
+  .fc-m2 {
+    width: 61vw;
+    height: 25vw;
+    top: 70%;
+    left: 79%;
+  }
+  .fc-m3 {
+    width: 55vw;
+    height: 23vw;
+    top: 77%;
+    left: -26%;
+  }
+  .fc-m4 {
+    width: 58vw;
+    height: 24vw;
+    top: 78%;
+    left: 126%;
+  }
+  .fc-b1 {
+    width: 39vw;
+    height: 15vw;
+    top: 23%;
+    left: 12%;
+  }
+  .fc-b2 {
+    width: 44vw;
+    height: 17vw;
+    top: 32%;
+    left: 53%;
+  }
+  .fc-b3 {
+    width: 36vw;
+    height: 14vw;
+    top: 21%;
+    left: 91%;
+  }
+  .fc-b4 {
+    width: 40vw;
+    height: 15vw;
+    top: 39%;
+    left: -13%;
+  }
+  .fc-b5 {
+    width: 39vw;
+    height: 15vw;
+    top: 42%;
+    left: 112%;
+  }
+  .fc-b6 {
+    width: 28vw;
+    height: 11vw;
+    top: 45%;
+    left: 73%;
+  }
+  .fc-f1 {
+    width: 78vw;
+    height: 31vw;
+    top: 88%;
+    left: -17%;
+  }
+  .fc-f2 {
+    width: 88vw;
+    height: 35vw;
+    top: 96%;
+    left: 34%;
+  }
+  .fc-f3 {
+    width: 82vw;
+    height: 32vw;
+    top: 89%;
+    left: 83%;
+  }
+  .fc-f4 {
+    width: 72vw;
+    height: 29vw;
+    top: 98%;
+    left: 126%;
+  }
+}

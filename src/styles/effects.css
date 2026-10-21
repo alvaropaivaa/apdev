@@ -1,0 +1,83 @@
+/* Brilho que segue o mouse dentro dos cards marcados com data-spotlight. */
+[data-spotlight]:after {
+  content: "";
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(
+    380px circle at var(--mx, 50%) var(--my, 50%),
+    var(--spot-color, #00a55726),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.35s;
+  position: absolute;
+  inset: 0;
+}
+[data-spotlight]:hover:after {
+  opacity: 1;
+}
+.project-card,
+.gateways-feature {
+  position: relative;
+}
+.project-card > *,
+.gateways-feature > * {
+  z-index: 1;
+  position: relative;
+}
+.why-card {
+  --spot-color: #5be38a33;
+}
+
+/* Barra de progresso de leitura no topo. */
+.scroll-progress {
+  z-index: 9998;
+  transform-origin: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, #078942, #00a557 50%, #5be38a);
+  height: 3px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: scaleX(0);
+  box-shadow: 0 0 12px #00a557aa;
+}
+
+/* Computador: o site aparece numa coluna com largura de celular (ver MobileFrame). */
+html.is-mobile-frame,
+html.is-mobile-frame body {
+  background: #020604;
+  height: 100%;
+  overflow: hidden;
+}
+.mobile-frame {
+  background:
+    radial-gradient(55% 45% at 50% 105%, #00a55740, #00a55700 70%),
+    radial-gradient(35% 40% at 12% 8%, #00a5571f, #00a55700 70%),
+    radial-gradient(35% 40% at 90% 30%, #00a55714, #00a55700 70%),
+    #020604;
+  place-items: center;
+  display: grid;
+  position: fixed;
+  inset: 0;
+}
+.mobile-frame-logo {
+  opacity: 0.9;
+  width: 104px;
+  height: auto;
+  position: absolute;
+  top: 28px;
+  left: 32px;
+}
+.mobile-frame-screen {
+  background: #000;
+  border: 0;
+  width: min(430px, 100vw);
+  height: 100%;
+  display: block;
+  box-shadow:
+    0 0 0 1px #ffffff14,
+    0 0 120px #00a55726;
+}
